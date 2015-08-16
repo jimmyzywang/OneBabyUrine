@@ -14,6 +14,9 @@
 		DFF1CD3F1B7F2500003C92C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF1CD3E1B7F2500003C92C5 /* Images.xcassets */; };
 		DFF1CD421B7F2500003C92C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF1CD401B7F2500003C92C5 /* LaunchScreen.xib */; };
 		DFF1CD4E1B7F2501003C92C5 /* OneBitBabyUrineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF1CD4D1B7F2501003C92C5 /* OneBitBabyUrineTests.m */; };
+		DFF1CD5B1B7F25D1003C92C5 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF1CD581B7F2569003C92C5 /* CoreBluetooth.framework */; };
+		DFF1CD5E1B7F2656003C92C5 /* OBBBlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF1CD5D1B7F2656003C92C5 /* OBBBlueToothManager.m */; };
+		DFF1CD621B807642003C92C5 /* OBBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF1CD611B807642003C92C5 /* OBBConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		DFF1CD471B7F2501003C92C5 /* OneBitBabyUrineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneBitBabyUrineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF1CD4C1B7F2501003C92C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF1CD4D1B7F2501003C92C5 /* OneBitBabyUrineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneBitBabyUrineTests.m; sourceTree = "<group>"; };
+		DFF1CD581B7F2569003C92C5 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		DFF1CD5C1B7F2656003C92C5 /* OBBBlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OBBBlueToothManager.h; path = BlueTooth/OBBBlueToothManager.h; sourceTree = "<group>"; };
+		DFF1CD5D1B7F2656003C92C5 /* OBBBlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OBBBlueToothManager.m; path = BlueTooth/OBBBlueToothManager.m; sourceTree = "<group>"; };
+		DFF1CD601B807642003C92C5 /* OBBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OBBConstants.h; path = Constants/OBBConstants.h; sourceTree = "<group>"; };
+		DFF1CD611B807642003C92C5 /* OBBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OBBConstants.m; path = Constants/OBBConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF1CD5B1B7F25D1003C92C5 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,9 @@
 		DFF1CD301B7F2500003C92C5 /* OneBitBabyUrine */ = {
 			isa = PBXGroup;
 			children = (
+				DFF1CD5F1B8075FE003C92C5 /* Constants */,
+				DFF1CD5A1B7F2583003C92C5 /* Frameworks */,
+				DFF1CD571B7F253D003C92C5 /* BlueTooth */,
 				DFF1CD351B7F2500003C92C5 /* AppDelegate.h */,
 				DFF1CD361B7F2500003C92C5 /* AppDelegate.m */,
 				DFF1CD381B7F2500003C92C5 /* ViewController.h */,
@@ -117,6 +129,32 @@
 				DFF1CD4C1B7F2501003C92C5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFF1CD571B7F253D003C92C5 /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				DFF1CD5C1B7F2656003C92C5 /* OBBBlueToothManager.h */,
+				DFF1CD5D1B7F2656003C92C5 /* OBBBlueToothManager.m */,
+			);
+			name = BlueTooth;
+			sourceTree = "<group>";
+		};
+		DFF1CD5A1B7F2583003C92C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFF1CD581B7F2569003C92C5 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFF1CD5F1B8075FE003C92C5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DFF1CD601B807642003C92C5 /* OBBConstants.h */,
+				DFF1CD611B807642003C92C5 /* OBBConstants.m */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +258,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFF1CD3A1B7F2500003C92C5 /* ViewController.m in Sources */,
+				DFF1CD621B807642003C92C5 /* OBBConstants.m in Sources */,
 				DFF1CD371B7F2500003C92C5 /* AppDelegate.m in Sources */,
 				DFF1CD341B7F2500003C92C5 /* main.m in Sources */,
+				DFF1CD5E1B7F2656003C92C5 /* OBBBlueToothManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: DONG ZHAO (ULH6RG9TC8)";
 				INFOPLIST_FILE = OneBitBabyUrine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
