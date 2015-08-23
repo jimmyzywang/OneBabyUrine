@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "OBBMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+  self.window.rootViewController = [[OBBMainViewController alloc] init];
+  [self.window makeKeyWindow];
   return YES;
 }
 

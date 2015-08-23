@@ -8,8 +8,9 @@
 
 #import "OBBBlueToothManager.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "OBBConstants.h"
 
-@interface OBBBlueToothManager() <CBCentralManagerDelegate>
+@interface OBBBlueToothManager() <CBCentralManagerDelegate,CBPeripheralDelegate>
 
 @end
 
@@ -19,7 +20,7 @@
 }
 
 +(OBBBlueToothManager*)shareInstance{
-  dispatch_once_t pred;
+  static dispatch_once_t pred;
   static OBBBlueToothManager* instance = nil;
   dispatch_once(&pred, ^{
     instance = [[OBBBlueToothManager alloc] init];
@@ -46,7 +47,9 @@
 }
 
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI{
-  if ([peripheral.name isEqualToString:@"OnlyBaby"] && peripheral.state == CBPeripheralStateDisconnected) {
+  if ([peripheral.name isEqualToString:kPeripheralName] && peripheral.state == CBPeripheralStateDisconnected) {
+      peripheral.delegate = self;
+      [centralManager_ connectPeripheral:peripheral options:nil];
     
     
   }
