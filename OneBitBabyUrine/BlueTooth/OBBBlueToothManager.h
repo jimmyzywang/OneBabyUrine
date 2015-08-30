@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YMSCBCentralManager.h"
 
-@interface OBBBlueToothManager : NSObject
+@interface OBBBlueToothManager : YMSCBCentralManager
 
 +(OBBBlueToothManager*)shareInstance;
 

@@ -327,7 +327,7 @@ NSString *const YMSCBVersion = @"" kYMSCBVersion;
         }
         
         if ([this.delegate respondsToSelector:@selector(centralManager:didRetrievePeripherals:)]) {
-            [this.delegate centralManager:central didRetrievePeripherals:peripherals];
+          //  [this.delegate centralManager:central didRetrievePeripherals:peripherals];
         }
     });
 }
@@ -342,7 +342,7 @@ NSString *const YMSCBVersion = @"" kYMSCBVersion;
         }
         
         if ([this.delegate respondsToSelector:@selector(centralManager:didRetrieveConnectedPeripherals:)]) {
-            [this.delegate centralManager:central didRetrieveConnectedPeripherals:peripherals];
+         //   [this.delegate centralManager:central didRetrieveConnectedPeripherals:peripherals];
         }
     });
 }
