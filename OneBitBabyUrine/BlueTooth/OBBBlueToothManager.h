@@ -7,12 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YMSCBCentralManager.h"
+#import <CoreBluetooth/CBCentralManager.h>
 
-@interface OBBBlueToothManager : YMSCBCentralManager
+
+@protocol OBBBlueToothManagerDelegate <NSObject>
+
+-(void)OBBBlueToothManagerFailToRetriveConnectedPeripheral:(NSError*)error;
+-(void)OBBBlueToothManagerDidSuccessRetriveConnectedPeripheral;
+
+@end
+
+typedef void (^OBBBlueToothStateCallback)(CBCentralManagerState state);
+
+@interface OBBBlueToothManager : NSObject
+
+-(void)ensurePhoneBlueToothState:(OBBBlueToothStateCallback)callback;
 
 +(OBBBlueToothManager*)shareInstance;
 
 -(void)beginToScanPeripheral;
+
+-(NSArray*)retrivePeripheral;
 
 @end

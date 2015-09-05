@@ -1,3 +1,4 @@
+
 //
 //  OBBConstants.m
 //  OneBitBabyUrine
@@ -9,3 +10,4 @@
 #import "OBBConstants.h"
 
 NSString* const kPeripheralName = @"OnlyBaby";
+NSString* const kPeripheralServiceUUID = @"0xAA20";

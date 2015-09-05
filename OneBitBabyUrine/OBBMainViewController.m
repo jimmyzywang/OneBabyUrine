@@ -15,12 +15,31 @@
 
 -(IBAction)p_onScanNewPeripheralButton:(id)sender;
 
+-(IBAction)p_onShowConnectedPeripheralButton:(id)sender;
+
 @end
 
 @implementation OBBMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  [[OBBBlueToothManager shareInstance] ensurePhoneBlueToothState:^(CBCentralManagerState state) {
+    switch (state) {
+      case CBCentralManagerStatePoweredOn:{
+        NSArray* connectedPeripherals = [[OBBBlueToothManager shareInstance] retrivePeripheral];
+        if (![connectedPeripherals count]) {
+          [[OBBBlueToothManager shareInstance] beginToScanPeripheral];
+        }
+        break;
+      }
+      case CBCentralManagerStatePoweredOff:{
+        NSLog(@"state power off");
+        break;
+      }
+      default:
+        break;
+    }
+  }];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,6 +53,11 @@
   [[OBBBlueToothManager shareInstance] beginToScanPeripheral];
 }
 
+
+-(IBAction)p_onShowConnectedPeripheralButton:(id)sender{
+  NSArray* connectedPeripherals = [[OBBBlueToothManager shareInstance] retrivePeripheral];
+  NSLog(@"connectedPeripherals = %@",connectedPeripherals);
+}
 
 
 @end

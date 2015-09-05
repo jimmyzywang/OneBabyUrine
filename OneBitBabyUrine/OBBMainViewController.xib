@@ -32,11 +32,21 @@
                         <action selector="p_onScanNewPeripheralButton:" destination="-1" eventType="touchUpInside" id="GUu-xf-9cu"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aa-vi-ZTS">
+                    <rect key="frame" x="70" y="200" width="460" height="30"/>
+                    <state key="normal" title="显示已经连上的设备"/>
+                    <connections>
+                        <action selector="p_onShowConnectedPeripheralButton:" destination="-1" eventType="touchUpInside" id="8RQ-jn-MHA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="FJP-1u-vnn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="7Z8-RI-0F3"/>
+                <constraint firstItem="0aa-vi-ZTS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="KNl-R0-HqX"/>
+                <constraint firstItem="0aa-vi-ZTS" firstAttribute="top" secondItem="FJP-1u-vnn" secondAttribute="bottom" constant="70" id="YET-t8-vsh"/>
                 <constraint firstAttribute="trailing" secondItem="FJP-1u-vnn" secondAttribute="trailing" constant="70" id="ey5-BT-m12"/>
+                <constraint firstAttribute="trailing" secondItem="0aa-vi-ZTS" secondAttribute="trailing" constant="70" id="lAo-xZ-vhJ"/>
                 <constraint firstItem="FJP-1u-vnn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="nF1-M8-hHQ"/>
             </constraints>
             <point key="canvasLocation" x="359" y="375"/>
